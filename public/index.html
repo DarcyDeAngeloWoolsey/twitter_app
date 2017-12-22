@@ -10,8 +10,7 @@
 <meta name="keywords" content="twitter, social media">
 <meta name="description" content="Application that posts tweets based on search criteria">
 <!--<meta http-equiv="refresh" content="30">refresh content every 30 seconds-->
-<!--<script src="jquery-3.2.1.min.js"></script> if using jquery-->
-    
+
 <title>Twiltap</title>
 <link rel="stylesheet" href="main.css">
 </head>
@@ -25,10 +24,11 @@
             <section class="search col-m-12">
                 <form class="search-form">
                     <label for="query"></label>
-                    <input type="search" name="tweetSearch" id="tweetSearch"/>
+                    <input type="search" class= "tweet-search" name="tweet-search" id="tweet-search"/>
                     
-                    <input type="submit">    
+                    <button type="submit" class="tweet-button">Tweet</button>    
                 </form>
+                
             </section>
             
             <section class="output">
@@ -46,8 +46,12 @@
                 
             </section>
         </div>
-        
-<script src="main.js"></script>    
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+                integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+                crossorigin="anonymous"></script>
+        <!--  <script src="/jquery/jquery-3.2.1.min.js"></script> using jquery-->
+        <script src="index2.js"></script>     
+   
 </body>
 
 </html>
