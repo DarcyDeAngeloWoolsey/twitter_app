@@ -35,8 +35,6 @@ function renderResult(result) {
     template.find(".js-user-location").text(result.user.location);
     template.find(".js-tweet-text").text(result.text);
 
-
-    console.log("the result.text:" + result.entities.urls.expanded_url);
     return template;
 }
 
