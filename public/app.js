@@ -114,54 +114,64 @@ function getRecentTweets(data) {
 }
 
 
+var RESULT_HTML_TEMPLATE = (
+    '<div>' +
+    '<img class="js-user-img" src="" target="_blank"/>' +
+    '<p class="js-user-name"></p>' + 
+    '<p class="js-user-screen-name"></p>' +
+    '<p class="js-user-description"></p>' +
+    '<p class="js-user-location"></p>' +
+    '<p class="js-tweet-text"></p>' +
+//   '<p>Number of open issues: <span class="js-issues-count"></span></p>' +
+    '<br/>' + 
+    '</div>'
+);
+
+function renderResult(result) {
+    var template = $(RESULT_HTML_TEMPLATE);
+    template.find(".js-user-img").attr("src", result.user.profile_image_url);
+    template.find(".js-user-name").text(result.user.name);
+    template.find(".js-user-screen-name").text(result.user.screen_name);
+    template.find(".js-user-description").text(result.user.description);
+    template.find(".js-user-location").text(result.user.location);
+    template.find(".js-tweet-text").text(result.text );
+
+    console.log("the result.text:" + result.text);
+    return template;
+}
 
 function displayTweetUpdates(data) {
-    console.log("displayTweetUpdates running");
-    console.log("the data is " + data);
-    if (data.length == 0) {
-        console.log("There is no matching data");
-        $('.output-tweets').append(
-            '<p>' + "Sorry there are no matches" + '</p>',
-            '<br />'
-        );
-    }
-    /*for (index in data ) */
-
-    // forEach
-    //     data.forEach(ride => {
-    //        $('main').append(
-    //            '<p>' + ride.amusementParkName + '</p>',
-    //            '<p>' + ride.rideName + '</p>',
-    //            '<p>' + ride.minutesWait + '</p>',
-    //            '<p>' + ride.typeOfRide + '</p>',
-    //            '<p>' + ride.thrill + '</p>',
-    //            '<p>' + ride.rating + '</p>',
-    //            '<p>' + ride.text + '</p>',
-    //            '<br />',
-    //            '<button class="btnEdit">' + "Edit" + '</button>',
-    //            '<button class="btnDelete">' + "Delete" + '</button>',
-    //            '<br />',
-    //            '</main>'
-    //        );
-    //    });
-
-//REMOVE IF YOU CAN BUILD OBJECT ARRAY
-    for (i = 0; i < data.length; i++) {//was data.statuses.length
-
-    console.log("for loop running");
-    //console.log(data.statuses);
-    //let id = data.statuses[i].id_str;
-    //console.log(id);
-    //        $('.btnDelete').attr("data-id", id);
-    //console.log("data-id", id);
-    $('.output-tweets').append(
-        '<p>' + data[i] + '</p>', //was data.statuses[i].text
-        //'<p>' + data[i].user.location + '</p>' 
-        +
-        '<br style="display:block; margin-top:20px; line-height:30px;"/>'
-    );
-
-    }
+    var results = data.map(function(item, index) {
+        return renderResult(item);
+    });
+    $('.js-search-results').html(results);
+//    console.log("displayTweetUpdates running");
+//    console.log("the data is " + data);
+//    if (data.length == 0) {
+//        console.log("There is no matching data");
+//        $('.output-tweets').append(
+//            '<p>' + "Sorry there are no matches" + '</p>',
+//            '<br />'
+//        );
+//    }
+//    for (i = 0; i < data.length; i++) {
+//    console.log("for loop running");
+//    $('.output-tweets').append(
+//        '<div class="card">'+
+////        '<img>' + data[i].user.profile_image_url + '</img>' +
+//        '<h3>' + data[i].user.name + '</h3>' + '<br/>' + 
+//        '<h3>' + "@" + data[i].user.screen_name + '</h3>' + '<br/>' + 
+//        '<p>' + data[i].user.description + '</p>'
+//        +
+//        '<br/>' + 
+//        '<p>' + data[i].user.location + '</p>'
+//        +
+//        '<br/>'+
+//        '<p>' + data[i].text + '</p>'
+//        + '</div>'
+//    );
+//
+//    }
 }
 
 /*Short version:
