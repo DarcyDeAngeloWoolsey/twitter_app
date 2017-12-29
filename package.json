@@ -2,13 +2,15 @@
   "name": "twitter_app",
   "version": "1.0.0",
   "description": "personal twitter tool",
-  "main": "test.js",
+  "main": "server.js",
   "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "jquery": "^3.2.1",
     "twit": "^2.2.9"
   },
   "devDependencies": {},
-  "scripts":{ 
-    "start": "node test.js",
+  "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

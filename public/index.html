@@ -1,57 +1,72 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<head>
-<meta charset="UTF-8">
-    <!--[if lt IE 9]>
+    <head>
+        <meta charset="UTF-8">
+        <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <![endif]-->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="author" content="Darcy">
-<meta name="keywords" content="twitter, social media">
-<meta name="description" content="Application that posts tweets based on search criteria">
-<!--<meta http-equiv="refresh" content="30">refresh content every 30 seconds-->
 
-<title>Twiltap</title>
-<link rel="stylesheet" href="main.css">
-</head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Darcy">
+        <meta name="keywords" content="twitter, social media">
+        <meta name="description" content="Application that posts tweets based on search criteria">
+
+        <!--<meta http-equiv="refresh" content="30">refresh content every 30 seconds-->
+
+        <title>Practice CodeTrain</title>
+       <link rel="stylesheet" href="main.css">
+    </head>
 
     <body>
+
         <header class="center">
             <h1>Twiltap</h1>
         </header> 
+
 
         <div class="container center">
             <section class="search col-m-12">
                 <form class="search-form">
                     <label for="query"></label>
                     <input type="search" class= "tweet-search" name="tweet-search" id="tweet-search"/>
-                    
-                    <button type="submit" class="tweet-button">Tweet</button>    
+
+                    <button type="submit" class="tweet-button">Search</button>    
                 </form>
-                
+
             </section>
+            
             
             <section class="output">
-               <article class="output-number">
-                   
-               </article>
-               
-               <article class="output-tweets">
-                   
-               </article>
-                
+                <article class="output-tweets">
+
+                </article>
             </section>
-            
+
+<!--
+            <section class="output">
+                <article class="output-number">
+
+                </article>
+
+                <article class="output-tweets">
+
+                </article>
+
+            </section>
+
             <section class="error-messaging">
-                
+
             </section>
+-->
         </div>
+
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"
                 integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
                 crossorigin="anonymous"></script>
-        <!--  <script src="/jquery/jquery-3.2.1.min.js"></script> using jquery-->
-        <script src="index2.js"></script>     
-   
-</body>
+        <script src="/jquery/jquery-3.2.1.min.js"></script>
+        <script src="app.js"></script>
+
+
+    </body>
 
 </html>
