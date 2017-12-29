@@ -1,81 +1,54 @@
 <!DOCTYPE html>
 <html lang="en-US">
-    <head>
-        <meta charset="UTF-8">
-        <!--[if lt IE 9]>
+
+<head>
+    <meta charset="UTF-8">
+    <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Darcy">
+    <meta name="keywords" content="twitter, social media">
+    <meta name="description" content="Application that posts tweets based on search criteria">
+    <title>Twiltap</title>
+    <link rel="stylesheet" href="main.css">
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="Darcy">
-        <meta name="keywords" content="twitter, social media">
-        <meta name="description" content="Application that posts tweets based on search criteria">
+</head>
 
-        <!--<meta http-equiv="refresh" content="30">refresh content every 30 seconds-->
+<body>
 
-        <title>Practice CodeTrain</title>
-       <link rel="stylesheet" href="main.css">
-       
-    </head>
+    <header class="center">
+        <h1 class="p_5TB">Twiltap</h1>
+    </header>
 
-    <body>
+    <div class="container center br_grey v_100">
+        <section class="search col-m-12">
+            <form class="search-form">
+                <label for="query"></label>
+                <input type="search" class="tweet-search" name="tweet-search" id="tweet-search" />
 
-        <header class="center">
-            <h1>Twiltap</h1>
-        </header> 
+                <button type="submit" class="tweet-button">Search</button>
+            </form>
+        </section>
 
-
-        <div class="container center">
-            <section class="search col-m-12">
-                <form class="search-form">
-                    <label for="query"></label>
-                    <input type="search" class= "tweet-search" name="tweet-search" id="tweet-search"/>
-
-                    <button type="submit" class="tweet-button">Search</button>    
-                </form>
-
-            </section>
-            
+        <article class="counter">
             <p>Showing: <span class="js-counter">0
-                </span> twitter results</p>
-            
-            <div class="js-search-results">
-                
-            </div>
-            
-            <section class="output">
-                <article class="output-tweets">
-                    <div class="js-search-results">
-                        
-                    </div>
-                </article>
-            </section>
+                    </span> twitter results</p>
+        </article>
 
-<!--
-            <section class="output">
-                <article class="output-number">
+        <section class="output br_grey">
+            <article class="output-tweets br_grey">
+                <div class="js-search-results">
 
-                </article>
+                </div>
+            </article>
+        </section>
+    </div>
 
-                <article class="output-tweets">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="/jquery/jquery-3.2.1.min.js"></script>
+    <script src="app.js"></script>
 
-                </article>
-
-            </section>
-
-            <section class="error-messaging">
-
-            </section>
--->
-        </div>
-
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-                integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-                crossorigin="anonymous"></script>
-        <script src="/jquery/jquery-3.2.1.min.js"></script>
-        <script src="app.js"></script>
-
-
-    </body>
+</body>
 
 </html>

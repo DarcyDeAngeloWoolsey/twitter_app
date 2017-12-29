@@ -1,24 +1,28 @@
 console.log("app is running");
-    
+
 function getRecentTweets(data) {
     setTimeout(function () {
         $.ajax({
-                method: 'get'
-            })
-            //        //        $.post
-            //
+            method: 'get'
+        })
     }, 100);
 }
 
 var RESULT_HTML_TEMPLATE = (
+    '<div class="card-width card">' +
+    '<div class="left inline-flex">' +
     '<div>' +
-    '<img class="js-user-img" src="" target="_blank"/>' +
-    '<p class="js-user-name"></p>' + 
-    '<p class="js-user-screen-name"></p>' +
-    '<p class="js-user-description"></p>' +
-    '<p class="js-user-location"></p>' +
-    '<p class="js-tweet-text"></p>' +
-    '<br/>' + 
+    '<img class="js-user-img inline-block br_100" src="" target="_blank"/>' +
+    '</div>' +
+    '<div class="text-width inline">' +
+    '<p class="js-user-name inline-block p_10 v_top bold"></p>' +
+    '<p class="inline-block p_10 v_top bold">' + "@" + '<span class="js-user-screen-name "></span></p>' +
+    '<br/>' +
+    '<p class="js-user-description inline-block p_10 p_5TB"></p>' +
+    '<p class="js-tweet-text inline-block p_10 p_5TB"></p>' +
+    '<p class="js-user-location inline-block p_10"></p>' +
+    '</div>' +
+    '</div>' +
     '</div>'
 );
 
@@ -29,9 +33,10 @@ function renderResult(result) {
     template.find(".js-user-screen-name").text(result.user.screen_name);
     template.find(".js-user-description").text(result.user.description);
     template.find(".js-user-location").text(result.user.location);
-    template.find(".js-tweet-text").text(result.text );
+    template.find(".js-tweet-text").text(result.text);
 
-    console.log("the result.text:" + result.text);
+
+    console.log("the result.text:" + result.entities.urls.expanded_url);
     return template;
 }
 
@@ -43,10 +48,10 @@ function displayTweetUpdates(data) {
             '<br />'
         );
     }
-    
+
     console.log(data.length);
-    
-    var results = data.map(function(item, index) {
+
+    var results = data.map(function (item, index) {
         return renderResult(item);
     });
     $('.js-counter').html(data.length);
@@ -61,8 +66,6 @@ function getAndDisplayTweetUpdates() {
         q: $('[name=tweet-search]').val()
     }, function (data) {
         console.log("search query is running");
-        $('.output-tweets').empty();
-        $('.output-tweets').show();
         displayTweetUpdates(data);
     });
 }
@@ -86,112 +89,6 @@ $(function () {
             displayTweetUpdates(data);
 
         });
-        $('.output-tweets').empty();
         $('.search-form')[0].reset();
     });
-    //
-    //
-    //
-    //    $(".buttonNew").click(function () {
-    //        event.preventDefault();
-    //        $(".modalAdd").show();
-    //
-    //    });
-    //
-    //    $(".formAdd").submit(function () {
-    //        event.preventDefault();
-    //        console.log("running formadd in app");
-    //        let name = $('[name=amusementParkName]').val();
-    //        let nameTrim = $.trim(name);
-    //
-    //        let nameTrimCase = nameTrim.replace(/[^-'\s]+/g, function (word) {
-    //            return word.replace(/^./, function (first) {
-    //                return first.toUpperCase();
-    //            });
-    //        });
-    //        $.post('/rides', {
-    //            amusementParkName: nameTrimCase,
-    //            rideName: $('[name=rideName]').val(),
-    //            minutesWait: $('[name=minutesWait]').val(),
-    //            typeOfRide: $('[name=typeOfRide]').val(),
-    //            thrill: $('[name=thrill]').val(),
-    //            rating: $('[name=rating]').val(),
-    //            text: $('[name=text]').val()
-    //        }, function (data) {
-    //            console.log("postRides working");
-    //            //            displayRideUpdates(data);
-    //            $(".modalAdd").hide();
-    //            getAndDisplayRideUpdates();
-    //        });
-    //        $(".list").empty();
-    //        $(".list").show();
-    //        $(".formAdd")[0].reset();
-    //
-    //    });
-    //
-    //    $(".buttonCloseModal").click(function () {
-    //        event.preventDefault();
-    //
-    //        $(".modalAdd").hide();
-    //        $(".list").show();
-    //    });
-    //
-    //    $(".buttonDeleteYes").click(function () {
-    //        event.preventDefault();
-    //        $(".modalDelete").hide();
-    //        $(".list").show();
-    //    });
-    //
-    //    $(".buttonDeleteNo").click(function () {
-    //        event.preventDefault();
-    //        $(".modalDelete").hide();
-    //        $(".list").show();
-    //    });
-    //
-    //
-    //
-    //
-    //
-    //    $(".formEdit").submit(function (event) {
-    //        event.preventDefault();
-    //        console.log("start edit");
-    //        console.log($(".buttonEditApply"))
-    //        let name = $('[name=amusementParkNameEdit]').val();
-    //        let nameTrim = $.trim(name);
-    //
-    //        let nameTrimCase = nameTrim.replace(/[^-'\s]+/g, function (word) {
-    //            return word.replace(/^./, function (first) {
-    //                return first.toUpperCase();
-    //            });
-    //        });
-    //        $.ajax({
-    //            url: '/rides/' + $(".buttonEditApply").attr('data-id'),
-    //
-    //            method: 'PUT',
-    //            data: ({
-    //                amusementParkName: nameTrimCase,
-    //                rideName: $('[name=rideNameEdit]').val(),
-    //                minutesWait: $('[name=minutesWaitEdit]').val(),
-    //                typeOfRide: $('[name=typeOfRideEdit]').val(),
-    //                thrill: $('[name=thrillEdit]').val(),
-    //                rating: $('[name=ratingEdit]').val(),
-    //                text: $('[name=textEdit]').val()
-    //            }),
-    //            success: function (data) {
-    //
-    //                $(".modalEdit").hide();
-    //                $(".formEdit").empty();
-    //            },
-    //
-    //
-    //
-    //        }).then(function () {
-    //            console.log("edit working");
-    //
-    //            getAndDisplayRideUpdates();
-    //
-    //        });
-    //
-    //    });
-
 });

@@ -1,16 +1,42 @@
 # twitter_app
-App using twitters API
+
+The following is a demonstration of using the Twitter API using HTML, CSS, Javascript, JQuery, Node.js, Express and the Twit API Client.
+
+I chose the Twitter API because I have previously utilized a Twitter Firehose, but more for research purposes for back-end staff. This gave me the opprotunity to look under the hood a bit more.
 
 dependencies:
-Twit is an API client for Node.js, has several updates, activity, and was recommended.
-twit: https://github.com/ttezel/twit
+Twit is an API client for Node.js, has several updates, activity, and was recommended by Programming from A to Z -http://shiffman.net/a2z/ - initally for building Twitter bots. 
+
+Twitter recommends using some version of a framework or helper and does not recommend that Twitter is accessed directly through client JavaScript due to OAuth. Therefore, Twit is utilized in this case as a module for handling OAuth and is exported into an Express.js server.  
+
+    twit: https://github.com/ttezel/twit
+    Name: Tolga Tezel
+    Version: ^2.2.9
+    Licence: (The MIT License)
+    Copyright (c) by Tolga Tezel tolgatezel11@gmail.com
+    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+    The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+    
+    npm install twit
 
 Express is a web framework for Node.js
-express: http://expressjs.com/
+    express: http://expressjs.com/
+    npm install express --save
 
 get references: https://developer.twitter.com/en/docs/tweets/search/api-reference/get-search-tweets
 
-post references: https://developer.twitter.com/en/docs/tweets/post-and-engage/api-reference/post-statuses-update
+
+
+Accessing and running should be simple:
+
+Clone from GitHub.
+From the project file in your command line:
+    NPM install
+    NPM init
+    NPM install twit and express as described above - this assumes you have node already
+Run the application from localhost:3000:
+    node server.js
 
 
 Twitter Status API Sample
