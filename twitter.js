@@ -16,7 +16,7 @@ var worker = function (query) {
 
     T.get('search/tweets', {
         q: query, //1st parameter: query string
-        count: 5 //2nd parameter: number returned
+        count: 100, //2nd parameter: number returned
     }, function (err, data, response) {
         var tweets = data.statuses;
 

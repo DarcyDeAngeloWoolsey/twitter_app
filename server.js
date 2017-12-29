@@ -16,10 +16,6 @@ app.get("/", (request, response) => {
     response.sendFile(__dirname + '/public/index.html');
 });
 
-//var q = "Disney";
-////console.log(q + "1");
-//twitterWorker(q);
-
 app.get('/search/tweets', (req, res) => {
 
     console.log("running app.get");
@@ -44,21 +40,6 @@ app.get('/search/tweets', (req, res) => {
     .then(result => {
         console.log(`First promise result is: ${result}`);
     });
-    
-   //  
-   
-//    
-//    //this maps through using the model schema. Don't know if we will need a schema
-//      .then(rides => {
-//          res.json(rides.map(ride => ride.apiRepr()))
-//      })
-////        .catch(err => {
-////            console.error(err);
-////            res.status(500).json({
-////                message: 'Internal server error'
-////            })
-////        });
-//});
 });
 
 //        //add a ride
