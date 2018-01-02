@@ -31,9 +31,10 @@ app.get('/search/tweets', (req, res) => {
             setTimeout(() => {
                 resolve(res.send(sendTweets));
                 
-            }, 1000);
+            }, 3000);
         } catch (err) {
             reject(err);
+            
         }
     });
     myPromise

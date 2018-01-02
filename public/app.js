@@ -10,11 +10,11 @@ function getRecentTweets(data) {
 
 var RESULT_HTML_TEMPLATE = (
     '<div class="card-width card">' +
-    '<div class="left inline-flex">' +
+    '<div class="left w_100 p_10 inline-flex">' +
     '<div>' +
     '<img class="js-user-img inline-block br_100" src="" target="_blank"/>' +
     '</div>' +
-    '<div class="text-width inline">' +
+    '<div class="w_100 p_10 inline">' +
     '<p class="js-user-name inline-block p_10 v_top bold"></p>' +
     '<p class="inline-block p_10 v_top bold">' + "@" + '<span class="js-user-screen-name "></span></p>' +
     '<br/>' +

@@ -85,7 +85,7 @@ h6 {
 /*Globals*/
 
 .v_100 {
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .center {
@@ -115,7 +115,7 @@ h6 {
 }
 
 .card-width {
-    max-width: 600px;
+    max-width: 97%;
 }
 
 .br_100 {
@@ -140,8 +140,8 @@ h6 {
     vertical-align: top;
 }
 
-.text-width {
-    max-width: 400px;
+.w_100 {
+    width: 100%;
 } 
 
 .inline {
