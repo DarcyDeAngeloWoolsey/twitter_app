@@ -34,7 +34,7 @@ app.get('/search/tweets', (req, res) => {
             }, 3000);
         } catch (err) {
             reject(err);
-            
+
         }
     });
     myPromise

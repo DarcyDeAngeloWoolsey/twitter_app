@@ -1,5 +1,7 @@
 console.log("app is running");
 
+
+
 function getRecentTweets(data) {
     setTimeout(function () {
         $.ajax({
@@ -10,7 +12,7 @@ function getRecentTweets(data) {
 
 var RESULT_HTML_TEMPLATE = (
     '<div class="card-width card">' +
-    '<div class="left w_100 p_10 inline-flex">' +
+    '<div class="left w_100 p_10 inline-flex tweet-container">' +
     '<div>' +
     '<img class="js-user-img inline-block br_100" src="" target="_blank"/>' +
     '</div>' +
@@ -23,6 +25,7 @@ var RESULT_HTML_TEMPLATE = (
     '<p class="js-user-location inline-block p_10"></p>' +
     '</div>' +
     '</div>' +
+    '<button class="js-toggle-button">' + "Change View" + '</button>' +
     '</div>'
 );
 
@@ -54,6 +57,13 @@ function displayTweetUpdates(data) {
     });
     $('.js-counter').html(data.length);
     $('.js-search-results').html(results);
+    
+    $(".js-toggle-button").click(function (event) {
+        console.log("click hide button");
+        event.preventDefault();
+        $(this).siblings(".tweet-container").slideToggle();
+    });
+
 }
 
 function getAndDisplayTweetUpdates() {
@@ -89,4 +99,5 @@ $(function () {
         });
         $('.search-form')[0].reset();
     });
+
 });

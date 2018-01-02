@@ -23,15 +23,22 @@ Express is a web framework for Node.js:
 •	Express.js: http://expressjs.com/
 
 Accessing and running should be simple:
+
 Clone from GitHub.
+
 From the project file in your command line:
 •	npm install
 •	npm init
 •	npm install express --save
 •	npm install twit
+
 Run the application:
 •	node server.js from the command line
 •	localhost:3000 in your browser
+
+Use the application:
+•	Simple use of searching keywords view the input element
+•	Hide and show button will toggle tweets of interest
 
 Twitter Status API Sample: 
 Source: https://developer.twitter.com/en/docs/tweets/search/api-reference/get-search-tweets
