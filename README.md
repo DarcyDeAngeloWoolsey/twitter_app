@@ -29,7 +29,7 @@ Clone from GitHub.
 From the project file in your command line:
 •	npm install
 •	npm init
-•	npm install --save express
+•	npm install express --save
 •	npm install twit
 
 Run the application:
