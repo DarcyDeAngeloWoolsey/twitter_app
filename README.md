@@ -43,18 +43,10 @@ Use the application:
 Twitter Status API Sample: 
 Source: https://developer.twitter.com/en/docs/tweets/search/api-reference/get-search-tweets
 
-var MOCK_Tweet_Status = {
-    "statuses": [
-        {
-            "created_at": "Wed Apr 12 04:53:25 +0000 2017",
-            "id": 852021818290352129,
-            "id_str": "852021818290352129",
-            "text": "Watch NASA's first 4K broadcast from space on April 26th - Engadget https:\/\/t.co\/EfwAYeJpjF",
-            "truncated": false,
-            "entities": {
-                "hashtags": [
-
-                    ],
+     var MOCK_Tweet_Status = { "statuses": [ 
+                 { "created_at": "Wed Apr 12 04:53:25 +0000 2017", "id": 852021818290352129, "id_str": "852021818290352129", "text": "Watch NASA's first 4K broadcast from space on April 26th - Engadget https://t.co/EfwAYeJpjF", "truncated": false, "entities":
+                 { "hashtags": [ 
+                 ],
                 "symbols": [
 
                     ],
