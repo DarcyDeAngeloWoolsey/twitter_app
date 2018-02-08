@@ -2,10 +2,7 @@ var worker = function (query) {
     var Twit = require('twit');
 
     var T = new Twit({
-        consumer_key: 'WaN2xehfkAoVEseXmcB5QQC9u',
-        consumer_secret: 'cPKtFBxCHaT2zCKLFCPQZPUM3E9sc52aYhlfj7MTwPbTZ2XYee',
-        access_token: '961464360-oXrO9PXi8uvRhm9E4NuRJj2C4eD34ijfMzQx0oxP',
-        access_token_secret: 'kszSxYXnoNE0POgf3l3iZPVzIg0JHsXU3cIAVC1A2Xuul',
+
     });
 
     T.get('search/tweets', {
